@@ -52,7 +52,7 @@ class ContentViewController: UIViewController {
         default:
             break
         }
-
+        
         headerLabel.text = header
         subheaderLabel.text = subheader
         imageView.image = UIImage(named: imageFile)
@@ -63,6 +63,4 @@ class ContentViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-
 }
