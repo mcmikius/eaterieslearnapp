@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FB3853D0220ABB5000CA822D /* AboutUsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3853CF220ABB5000CA822D /* AboutUsTableViewController.swift */; };
+		FB3853D2220ABF1A00CA822D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3853D1220ABF1A00CA822D /* WebViewController.swift */; };
 		FB44E7CF22032A6B00B7540B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB44E7CE22032A6B00B7540B /* AppDelegate.swift */; };
 		FB44E7D422032A6B00B7540B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB44E7D222032A6B00B7540B /* Main.storyboard */; };
 		FB44E7D622032A6C00B7540B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB44E7D522032A6C00B7540B /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		FB3853CF220ABB5000CA822D /* AboutUsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsTableViewController.swift; sourceTree = "<group>"; };
+		FB3853D1220ABF1A00CA822D /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		FB44E7CB22032A6B00B7540B /* Eateries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eateries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB44E7CE22032A6B00B7540B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB44E7D322032A6B00B7540B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				FB55A6F522082DB7002DC93E /* CoreDataStack.swift */,
 				FB55A6FE22099EDA002DC93E /* Page */,
 				FB3853CF220ABB5000CA822D /* AboutUsTableViewController.swift */,
+				FB3853D1220ABF1A00CA822D /* WebViewController.swift */,
 			);
 			path = Eateries;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				FB44E7E32203335F00B7540B /* EateriesTableViewCell.swift in Sources */,
 				FBAF6D0B22063AC000D62C22 /* NewEateryTableViewController.swift in Sources */,
 				FB55A6FB22099EB6002DC93E /* ContentViewController.swift in Sources */,
+				FB3853D2220ABF1A00CA822D /* WebViewController.swift in Sources */,
 				FB44E7EC2204A2F300B7540B /* RateViewController.swift in Sources */,
 				FBAF6D062206339F00D62C22 /* MapViewController.swift in Sources */,
 			);

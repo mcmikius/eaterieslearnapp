@@ -593,7 +593,7 @@
             </objects>
             <point key="canvasLocation" x="1081" y="939"/>
         </scene>
-        <!--Root View Controller-->
+        <!--About Us-->
         <scene sceneID="c6W-Rx-uI7">
             <objects>
                 <tableViewController id="mde-mz-CkS" customClass="AboutUsTableViewController" customModule="Eateries" customModuleProvider="target" sceneMemberID="viewController">
@@ -629,11 +629,29 @@
                             <outlet property="delegate" destination="mde-mz-CkS" id="mJD-nS-ov8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="wyl-hv-DtX"/>
+                    <navigationItem key="navigationItem" title="About Us" id="wyl-hv-DtX"/>
+                    <connections>
+                        <segue destination="URW-lg-gbO" kind="show" identifier="showWebPageSegue" id="baJ-GJ-j3M"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4F3-80-Fog" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1100" y="1669"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="JRc-dW-eY5">
+            <objects>
+                <viewController id="URW-lg-gbO" customClass="WebViewController" customModule="Eateries" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VYq-wZ-WMC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Grp-1p-AmS"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z58-4x-NKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1980" y="1668"/>
         </scene>
         <!--About us-->
         <scene sceneID="5Wh-N3-0C3">
