@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB3853D0220ABB5000CA822D /* AboutUsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3853CF220ABB5000CA822D /* AboutUsTableViewController.swift */; };
 		FB44E7CF22032A6B00B7540B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB44E7CE22032A6B00B7540B /* AppDelegate.swift */; };
 		FB44E7D422032A6B00B7540B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB44E7D222032A6B00B7540B /* Main.storyboard */; };
 		FB44E7D622032A6C00B7540B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB44E7D522032A6C00B7540B /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB3853CF220ABB5000CA822D /* AboutUsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsTableViewController.swift; sourceTree = "<group>"; };
 		FB44E7CB22032A6B00B7540B /* Eateries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eateries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB44E7CE22032A6B00B7540B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB44E7D322032A6B00B7540B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				FBAF6D0A22063AC000D62C22 /* NewEateryTableViewController.swift */,
 				FB55A6F522082DB7002DC93E /* CoreDataStack.swift */,
 				FB55A6FE22099EDA002DC93E /* Page */,
+				FB3853CF220ABB5000CA822D /* AboutUsTableViewController.swift */,
 			);
 			path = Eateries;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				FB44E7E92204383900B7540B /* EateryDetailTableViewCell.swift in Sources */,
 				FB55A6F92208424D002DC93E /* Eateries.xcdatamodeld in Sources */,
 				FB44E7CF22032A6B00B7540B /* AppDelegate.swift in Sources */,
+				FB3853D0220ABB5000CA822D /* AboutUsTableViewController.swift in Sources */,
 				FB55A6FD22099ECC002DC93E /* PageViewController.swift in Sources */,
 				FB44E7E122032B3E00B7540B /* EateriesTableViewController.swift in Sources */,
 				FB44E7E52204247200B7540B /* EateryDetailViewController.swift in Sources */,
