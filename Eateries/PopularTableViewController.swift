@@ -12,10 +12,25 @@ import CloudKit
 class PopularTableViewController: UITableViewController {
     
     var restaurants: [CKRecord] = []
+    var activityIndicator: UIActivityIndicatorView!
+    var cache = NSCache<CKRecord.ID, AnyObject>()
     let publicDataBase = CKContainer.default().publicCloudDatabase
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+        activityIndicator.color = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        tableView.addSubview(activityIndicator)
+        
+        //        activityIndicator.centerXAnchor.constraint(equalTo: tableView.centerXAnchor).isActive = true
+        //        activityIndicator.centerYAnchor.constraint(equalTo: tableView.centerYAnchor).isActive = true
+        
+        NSLayoutConstraint(item: activityIndicator!, attribute: .centerX, relatedBy: .equal, toItem: tableView, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: activityIndicator!, attribute: .centerY, relatedBy: .equal, toItem: tableView, attribute: .centerY, multiplier: 0.85, constant: 0).isActive = true
         
         getCloudRecords()
     }
@@ -58,6 +73,7 @@ class PopularTableViewController: UITableViewController {
             print("Записи успешно получены из iCloud")
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
             }
         }
         publicDataBase.add(queryOperation)
@@ -82,33 +98,40 @@ class PopularTableViewController: UITableViewController {
         cell.textLabel?.text = restaurant.object(forKey: "name") as? String
         cell.imageView?.image = UIImage(named: "photo")
         
-        let fetchRecordsOperation = CKFetchRecordsOperation(recordIDs: [restaurant.recordID])
-        fetchRecordsOperation.desiredKeys = ["image"]
-        fetchRecordsOperation.queuePriority = .veryHigh
-        
-        fetchRecordsOperation.perRecordCompletionBlock = {
-            (record, recordID, error) in
-            
-            guard error == nil else {
-                print("Не удалось получить записи из iCloud")
-                return
+        if let imageURL = cache.object(forKey: restaurant.recordID) as? URL {
+            if let data = try? Data(contentsOf: imageURL) {
+                cell.imageView?.image = UIImage(data: data)
             }
+        } else {
             
-            if let record = record {
-                if let image = record.object(forKey: "image") {
-                    let image = image as! CKAsset
-                    
-                    let data = try? Data(contentsOf: image.fileURL!)
-                    if let data = data {
-                        DispatchQueue.main.async {
-                            cell.imageView?.image = UIImage(data: data)
+            let fetchRecordsOperation = CKFetchRecordsOperation(recordIDs: [restaurant.recordID])
+            fetchRecordsOperation.desiredKeys = ["image"]
+            fetchRecordsOperation.queuePriority = .veryHigh
+            
+            fetchRecordsOperation.perRecordCompletionBlock = {
+                (record, recordID, error) in
+                
+                guard error == nil else {
+                    print("Не удалось получить записи из iCloud")
+                    return
+                }
+                
+                if let record = record {
+                    if let image = record.object(forKey: "image") {
+                        let image = image as! CKAsset
+                        
+                        let data = try? Data(contentsOf: image.fileURL!)
+                        if let data = data {
+                            DispatchQueue.main.async {
+                                cell.imageView?.image = UIImage(data: data)
+                                self.cache.setObject(image.fileURL as AnyObject, forKey: restaurant.recordID)
+                            }
                         }
                     }
                 }
             }
+            publicDataBase.add(fetchRecordsOperation)
         }
-        
-        publicDataBase.add(fetchRecordsOperation)
         return cell
     }
     
