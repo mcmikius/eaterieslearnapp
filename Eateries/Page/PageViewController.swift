@@ -10,8 +10,8 @@ import UIKit
 
 class PageViewController: UIPageViewController {
     
-    var headersArray = ["Write", "Search"]
-    var subheadersArray = ["Create your restaurant love list", "Search and pin your love restaurants on map"]
+    var headersArray = [NSLocalizedString("Write", comment: "Write"), NSLocalizedString("Search", comment: "Search")]
+    var subheadersArray = [NSLocalizedString("Create your restaurant love list", comment: "Create your restaurant love list"), NSLocalizedString("Search and pin your love restaurants on map", comment: "Search and pin your love restaurants on map")]
     var imagesArray = ["food", "iphoneMap"]
     
     override func viewDidLoad() {

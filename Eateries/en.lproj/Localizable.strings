@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  Eateries
+
+  Created by Michail Bondarenko on 08.06.2019.
+  Copyright © 2019 Michail Bondarenko. All rights reserved.
+*/
+
+// MARK: - NewEateryTableViewController
+"Error!" = "Error!";
+"Not all fields have been filled." = "Not all fields have been filled.";
+"OK" = "OK";
+"Photo source" = "Photo source";
+"Camera" = "Camera";
+"Photo" = "Photo";
+"Cancel" = "Cancel";
+
+//MARK: - ContentViewController
+"Next" = "Next";
+"Open App" = "Open App";
+
+//MARK: - PageViewController
+"Write" = "Write";
+"Search" = "Search";
+"Create your restaurant love list" = "Create your restaurant love list";
+"Search and pin your love restaurants on map" = "Search and pin your love restaurants on map";
+
+//MARK: - AboutUsTableViewController
+"we are in social networks" = "we are in social networks";
+"Our web-sites" = "Our web-sites";
+

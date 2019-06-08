@@ -27,6 +27,7 @@
 		FBAF6D062206339F00D62C22 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAF6D052206339F00D62C22 /* MapViewController.swift */; };
 		FBAF6D09220633DF00D62C22 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAF6D08220633DF00D62C22 /* MapKit.framework */; };
 		FBAF6D0B22063AC000D62C22 /* NewEateryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAF6D0A22063AC000D62C22 /* NewEateryTableViewController.swift */; };
+		FBCA286622ABEE3500090B4E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBCA286822ABEE3500090B4E /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,13 @@
 		FBAF6D052206339F00D62C22 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FBAF6D08220633DF00D62C22 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FBAF6D0A22063AC000D62C22 /* NewEateryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEateryTableViewController.swift; sourceTree = "<group>"; };
+		FBCA286022ABB11300090B4E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		FBCA286122ABB11300090B4E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FBCA286222ABB11D00090B4E /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
+		FBCA286322ABB11D00090B4E /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FBCA286722ABEE3500090B4E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBCA286922ABEEAC00090B4E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBCA286A22ABEEAD00090B4E /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,7 @@
 				FB3853CF220ABB5000CA822D /* AboutUsTableViewController.swift */,
 				FB3853D1220ABF1A00CA822D /* WebViewController.swift */,
 				FBA6E33922A95E1B004FDF99 /* PopularTableViewController.swift */,
+				FBCA286822ABEE3500090B4E /* Localizable.strings */,
 			);
 			path = Eateries;
 			sourceTree = "<group>";
@@ -191,6 +200,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				uk,
 			);
 			mainGroup = FB44E7C222032A6B00B7540B;
 			productRefGroup = FB44E7CC22032A6B00B7540B /* Products */;
@@ -208,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB44E7D922032A6C00B7540B /* LaunchScreen.storyboard in Resources */,
+				FBCA286622ABEE3500090B4E /* Localizable.strings in Resources */,
 				FB44E7D622032A6C00B7540B /* Assets.xcassets in Resources */,
 				FB44E7D422032A6B00B7540B /* Main.storyboard in Resources */,
 			);
@@ -245,6 +257,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				FB44E7D322032A6B00B7540B /* Base */,
+				FBCA286022ABB11300090B4E /* ru */,
+				FBCA286222ABB11D00090B4E /* uk */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -253,8 +267,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				FB44E7D822032A6C00B7540B /* Base */,
+				FBCA286122ABB11300090B4E /* ru */,
+				FBCA286322ABB11D00090B4E /* uk */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FBCA286822ABEE3500090B4E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBCA286722ABEE3500090B4E /* en */,
+				FBCA286922ABEEAC00090B4E /* ru */,
+				FBCA286A22ABEEAD00090B4E /* uk */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -264,6 +290,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -325,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

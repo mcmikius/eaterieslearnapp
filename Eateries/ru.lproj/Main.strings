@@ -1,0 +1,69 @@
+
+/* Class = "UITextField"; placeholder = "Restaurant name"; ObjectID = "0ac-nn-Ze9"; */
+"0ac-nn-Ze9.placeholder" = "Название ресторана";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "1eO-Wz-Xi9"; */
+"1eO-Wz-Xi9.text" = "Тип";
+
+/* Class = "UITextField"; placeholder = "Restaurant type"; ObjectID = "1qG-sX-vxo"; */
+"1qG-sX-vxo.placeholder" = "Тип ресторана";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "2AD-Yr-NM6"; */
+"2AD-Yr-NM6.text" = "Адресс";
+
+/* Class = "UIButton"; normalTitle = "No"; ObjectID = "64H-EU-6fu"; */
+"64H-EU-6fu.normalTitle" = "Нет";
+
+/* Class = "UILabel"; text = "Key"; ObjectID = "7v4-zm-lJt"; */
+"7v4-zm-lJt.text" = "Ключ";
+
+/* Class = "UILabel"; text = "header"; ObjectID = "7yF-Xw-qI0"; */
+"7yF-Xw-qI0.text" = "шапка";
+
+/* Class = "UILabel"; text = "How do you have?"; ObjectID = "ANv-Pc-b1A"; */
+"ANv-Pc-b1A.text" = "У тебя есть?";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Hds-0Q-wqH"; */
+"Hds-0Q-wqH.text" = "Заголовок";
+
+/* Class = "UITextField"; placeholder = "Restaurant address"; ObjectID = "J22-vI-PRr"; */
+"J22-vI-PRr.placeholder" = "Адресс ресторана";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "LKO-cq-qTi"; */
+"LKO-cq-qTi.normalTitle" = "Кнопка";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "LYF-kk-pD1"; */
+"LYF-kk-pD1.text" = "Имя";
+
+/* Class = "UINavigationItem"; title = "Popular"; ObjectID = "Mzk-Oj-vst"; */
+"Mzk-Oj-vst.title" = "Популярные";
+
+/* Class = "UILabel"; text = "Value"; ObjectID = "RzZ-6o-b7G"; */
+"RzZ-6o-b7G.text" = "Value";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "cBJ-GE-Efz"; */
+"cBJ-GE-Efz.text" = "Type";
+
+/* Class = "UINavigationItem"; title = "My Eateries"; ObjectID = "dDx-1k-AUq"; */
+"dDx-1k-AUq.title" = "My Eateries";
+
+/* Class = "UIButton"; normalTitle = "Yes"; ObjectID = "gSJ-4k-mW6"; */
+"gSJ-4k-mW6.normalTitle" = "Yes";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "iBl-gb-1r3"; */
+"iBl-gb-1r3.text" = "Name";
+
+/* Class = "UILabel"; text = "Do you have?"; ObjectID = "keQ-1k-9L0"; */
+"keQ-1k-9L0.text" = "Do you have?";
+
+/* Class = "UILabel"; text = "header"; ObjectID = "kpn-7Y-Vic"; */
+"kpn-7Y-Vic.text" = "header";
+
+/* Class = "UITabBarItem"; title = "About us"; ObjectID = "s9m-G0-9zp"; */
+"s9m-G0-9zp.title" = "About us";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "tVH-K6-sc3"; */
+"tVH-K6-sc3.text" = "Location";
+
+/* Class = "UINavigationItem"; title = "About Us"; ObjectID = "wyl-hv-DtX"; */
+"wyl-hv-DtX.title" = "About Us";

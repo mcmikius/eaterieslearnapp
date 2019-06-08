@@ -46,9 +46,9 @@ class ContentViewController: UIViewController {
         
         switch index {
         case 0:
-            pageButton.setTitle("Next", for: .normal)
+            pageButton.setTitle(NSLocalizedString("Next", comment: "Next"), for: .normal)
         case 1:
-            pageButton.setTitle("Open App", for: .normal)
+            pageButton.setTitle(NSLocalizedString("Open App", comment: "Open App"), for: .normal)
         default:
             break
         }

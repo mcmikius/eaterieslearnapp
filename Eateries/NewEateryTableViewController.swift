@@ -21,8 +21,8 @@ class NewEateryTableViewController: UITableViewController, UIImagePickerControll
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         if nameTextField.text == "" || addressTextField.text == "" || typeTextField.text == "" {
-            let alertController = UIAlertController(title: "Error!", message: "Not all fields have been filled.", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let alertController = UIAlertController(title: NSLocalizedString("Error!", comment: "Error!"), message: NSLocalizedString("Not all fields have been filled.", comment: "Not all fields have been filled."), preferredStyle: .alert)
+            let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: .default, handler: nil)
             alertController.addAction(okAction)
             present(alertController,animated: true, completion: nil)
         } else {
@@ -115,14 +115,14 @@ class NewEateryTableViewController: UITableViewController, UIImagePickerControll
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            let alertController = UIAlertController(title: "Photo source", message: nil, preferredStyle: .actionSheet)
-            let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: { (action) in
+            let alertController = UIAlertController(title: NSLocalizedString("Photo source", comment: "Photo source"), message: nil, preferredStyle: .actionSheet)
+            let cameraAction = UIAlertAction(title: NSLocalizedString("Camera", comment: "Camera"), style: .default, handler: { (action) in
                 self.chooseImagePickerAction(source: .camera)
             })
-            let photoAction = UIAlertAction(title: "Photo", style: .default, handler: { (action) in
+            let photoAction = UIAlertAction(title: NSLocalizedString("Photo", comment: "Photo"), style: .default, handler: { (action) in
                 self.chooseImagePickerAction(source: .photoLibrary)
             })
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel, handler: nil)
             alertController.addAction(cameraAction)
             alertController.addAction(photoAction)
             alertController.addAction(cancelAction)
