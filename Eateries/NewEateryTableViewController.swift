@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class NewEateryTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -41,6 +42,7 @@ class NewEateryTableViewController: UITableViewController, UIImagePickerControll
                 } catch let error as NSError {
                     print("Data was not save \(error), \(error.userInfo)")
                 }
+                saveToiColoud(restaurant)
             }
             performSegue(withIdentifier: "unwindSegueFromNewEatery", sender: self)
         }
@@ -54,6 +56,42 @@ class NewEateryTableViewController: UITableViewController, UIImagePickerControll
             sender.backgroundColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
             yesButton.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
             isVisited = false
+        }
+    }
+    
+    func saveToiColoud(_ restaurant: Restaurant) {
+        let restRecord = CKRecord(recordType: "Restaurant")
+        restRecord.setValue(nameTextField.text, forKey: "name")
+        restRecord.setValue(typeTextField.text, forKey: "type")
+        restRecord.setValue(addressTextField.text, forKey: "location")
+        
+        guard let originImage = UIImage(data: restaurant.image! as Data) else { return }
+        let scale = originImage.size.width > 1080.0 ? 1080.0 / originImage.size.width : 1.0
+        let scaledImage = UIImage(data: restaurant.image as! Data, scale: scale)
+        let imageFilePath = NSTemporaryDirectory() + restaurant.name!
+        let imageFileURL = URL(fileURLWithPath: imageFilePath)
+        
+        do {
+            try scaledImage?.jpegData(compressionQuality: 0.7)?.write(to: imageFileURL, options: .atomic)
+//            try UIImageJPEGRepresentation(scaledImage!, 0.7)?.write(to: imageFileURL, options: .atomic)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        let imageAsset = CKAsset(fileURL: imageFileURL)
+        restRecord.setValue(imageAsset, forKey: "image")
+        let publicDataBase = CKContainer.default().publicCloudDatabase
+        publicDataBase.save(restRecord) { (record, error) in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            
+            do {
+                try FileManager.default.removeItem(at: imageFileURL)
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
     
