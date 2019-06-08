@@ -19,6 +19,11 @@ class PopularTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        refreshControl = UIRefreshControl()
+        refreshControl?.backgroundColor = .white
+        refreshControl?.tintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        refreshControl?.addTarget(self, action: #selector(getCloudRecords), for: .valueChanged)
+        
         activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
         activityIndicator.color = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
@@ -35,7 +40,8 @@ class PopularTableViewController: UITableViewController {
         getCloudRecords()
     }
     
-    func getCloudRecords() {
+    @objc func getCloudRecords() {
+        restaurants = []
         //        let predicate = NSPredicate(value: true)
         //        let query = CKQuery(recordType: "Restaurant", predicate: predicate)
         //        publicDataBase.perform(query, inZoneWith: nil) { (records, error) in
@@ -74,6 +80,7 @@ class PopularTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.activityIndicator.stopAnimating()
+                self.refreshControl?.endRefreshing()
             }
         }
         publicDataBase.add(queryOperation)
@@ -116,18 +123,29 @@ class PopularTableViewController: UITableViewController {
                     return
                 }
                 
-                if let record = record {
-                    if let image = record.object(forKey: "image") {
-                        let image = image as! CKAsset
-                        
-                        let data = try? Data(contentsOf: image.fileURL!)
-                        if let data = data {
-                            DispatchQueue.main.async {
-                                cell.imageView?.image = UIImage(data: data)
-                                self.cache.setObject(image.fileURL as AnyObject, forKey: restaurant.recordID)
-                            }
-                        }
-                    }
+                //                if let record = record {
+                //                    if let image = record.object(forKey: "image") {
+                //                        let image = image as! CKAsset
+                //
+                //                        let data = try? Data(contentsOf: image.fileURL!)
+                //                        if let data = data {
+                //                            DispatchQueue.main.async {
+                //                                cell.imageView?.image = UIImage(data: data)
+                //                                self.cache.setObject(image.fileURL as AnyObject, forKey: restaurant.recordID)
+                //                            }
+                //                        }
+                //                    }
+                //                }
+                //            }
+                guard let record = record else { return }
+                guard let image = record.object(forKey: "image") else { return }
+                let imageAsset = image as! CKAsset
+                
+                guard let data = try? Data(contentsOf: imageAsset.fileURL!) else { return }
+                DispatchQueue.main.async {
+                    cell.imageView?.image = UIImage(data: data)
+                    self.cache.setObject(imageAsset.fileURL as AnyObject, forKey: restaurant.recordID)
+                    self.activityIndicator.stopAnimating()
                 }
             }
             publicDataBase.add(fetchRecordsOperation)
